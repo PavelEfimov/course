@@ -4,12 +4,13 @@ import { Route, Redirect } from 'react-router-dom';
 import { render } from 'react-dom';
 
 import Routes from '../Routes/Routes';
+import Header from '../Header/Header';
 
 class App extends Component {
     render() {
         return (
             <div>
-                <h1>Hello world</h1>
+                <Header />
                 {Routes.map((route, index)=>(
                 <Route path={route.path} 
                     exact={route.exact} 

@@ -13,7 +13,17 @@ module.exports = {
                 test: /\.(js|jsx)?$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/
-            }
+            },  {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                  {
+                    loader: 'url-loader',
+                    options: {
+                      limit: 10000000
+                    }
+                  }
+                ]
+              }
         ]
     }
 }
