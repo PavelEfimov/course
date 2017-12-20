@@ -4,7 +4,7 @@ import Banner from './Banner';
 import SocialLinks from './SocialLinks';
 import NavigationMenu from './NavigationMenu';
 
-//import '../../css/Header.css';
+import '../../css/Header.css';
 
 const Header = () => {
   return (
