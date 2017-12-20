@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Route, Redirect } from 'react-router-dom';
+
 import { render } from 'react-dom';
 
 import Routes from '../Routes/Routes';
