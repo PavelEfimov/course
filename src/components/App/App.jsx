@@ -13,10 +13,7 @@ class App extends Component {
         return (
             <div className="App">
                 <Header />
-                {Routes.map((route, index)=>(
-                <Route path={route.path} 
-                    exact={route.exact} 
-                    component={route.component} key={index} />))}
+                {Routes.map((route, index)=> <Route path={route.path}  exact={route.exact} component={route.component} key={index} />)}
                 <Redirect to="/Home" from="/" />      
             </div>
         )
