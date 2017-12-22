@@ -7,7 +7,7 @@ class Home extends Component {
             response: []
         }
     }
-
+    
     componentDidMount() {
         const xhr = new XMLHttpRequest()
         xhr.open('GET', '/api/Home', false)

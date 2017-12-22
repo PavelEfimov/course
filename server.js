@@ -1,3 +1,4 @@
+const db = require ('.Database/Database');
 const express = require('express');
 const app = express();
 
@@ -7,17 +8,11 @@ app.get(/^(?!\/?api).+$/, (request, response) => {
   response.sendFile('/public/index.html', {root: __dirname });  
 });
 
-const someData = [
-  {
-    name: "Pasha"
-  }, 
-  {
-    name: "Sveta"
-  }
-];
+const data = [];
+db.getLinks().then(result => data.push(...result));
 
 app.get('/api/Home', (request, response) => (
-  response.send(someData)
+  response.send()
 ));
 
 app.listen(3000, () => console.log('server on port 3000'));
