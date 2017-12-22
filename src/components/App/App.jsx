@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import { render } from 'react-dom';
 
@@ -13,8 +13,10 @@ class App extends Component {
         return (
             <div className="App">
                 <Header />
+                <Switch>
                 {Routes.map((route, index)=> <Route path={route.path}  exact={route.exact} component={route.component} key={index} />)}
-                <Redirect to="/Home" from="/" />      
+                <Redirect to="/Home" from="/" />  
+                </Switch>    
             </div>
         )
     }
