@@ -4,7 +4,7 @@ const app = express();
 app.use(express.static(__dirname + '/public'));
 
 app.get(/^(?!\/?api).+$/, (request, response) => {
-  response.sendFile(__dirname + '/public/index.html');  
+  response.sendFile('/public/index.html', {root: __dirname });  
 });
 
 const someData = [
@@ -16,7 +16,7 @@ const someData = [
   }
 ];
 
-app.get('/api/Home', (request,response) => (
+app.get('/api/Home', (request, response) => (
   response.send(someData)
 ));
 
