@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import '../../Styles/Home.css';
 
+const xhr = new XMLHttpRequest();
+
 class SideMenu extends Component {
     constructor() {
         super();
@@ -12,13 +14,16 @@ class SideMenu extends Component {
     }
 
     componentDidMount() {
-        const xhr = new XMLHttpRequest()
         xhr.open('GET', '/api/Home', false)
         xhr.send()
-        const data = JSON.parse(xhr.responseText);   
-        this.setState({ links: data });
+        const response = JSON.parse(xhr.responseText);   
+        this.setState({ links: response });
     }
     
+    componentWillUnmount() {
+        xhr.abort();
+    }
+
     render() {
         const { links } = this.state;
         return (

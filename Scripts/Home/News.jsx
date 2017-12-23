@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+
+const xhr = new XMLHttpRequest();
+
 class News extends Component {
     constructor() {
         super();
@@ -8,11 +11,14 @@ class News extends Component {
     }
     
     componentDidMount() {
-        const xhr = new XMLHttpRequest()
         xhr.open('GET', '/db/Home', false)
         xhr.send()
-        const d = JSON.parse(xhr.responseText);   
-        this.setState({ data: d });
+        const response = JSON.parse(xhr.responseText);   
+        this.setState({ data: response });
+    }
+
+    componentWillUnmount() {
+        xhr.abort();
     }
 
     render() {
