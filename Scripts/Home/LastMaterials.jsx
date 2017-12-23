@@ -1,11 +1,11 @@
 import React from 'react';
 
-const LastMaterials = ({ title }) => {
-    return <div className="elements-LastMaterials">
+const LastMaterials = ({ title }) => (
+    <div className="elements-LastMaterials">
         <p className="lastMaterials-title">
-            <a className="lastMaterial-link" href="#">{title}</a> 
+            <a className="lastMaterial-link" href="#">{ title }</a> 
         </p>
-        </div> 
-}
+    </div> 
+);
 
 export default LastMaterials;

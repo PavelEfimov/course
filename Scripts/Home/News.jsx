@@ -25,7 +25,7 @@ class News extends Component {
         const { data } = this.state;
         return (
             <div className="home-news">
-            { data.map( (item, index) => <h1 key={index}>{item.name}</h1> ) }
+            { data.map( (item, index) => <h1 key={ index }>{ item.name }</h1> ) }
             </div>
         )
     }

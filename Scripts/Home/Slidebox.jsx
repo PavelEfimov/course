@@ -42,9 +42,9 @@ class Slidebox extends Component {
     const { current, leftArrow, rightArrow } = this.state;
     return (
       <div className="home-slidebox">
-        { images.map( (item, index ) => index === current ? <Slide key={index} image = {item} />: null ) }
-        { leftArrow ? <LeftArrow previous = {this.previous} />: null }
-        { rightArrow ? <RightArrow next = {this.next} />: null }
+        { images.map( (item, index ) => index === current ? <Slide key={ index } image = { item } />: null ) }
+        { leftArrow ? <LeftArrow previous = { this.previous } />: null }
+        { rightArrow ? <RightArrow next = { this.next } />: null }
       </div>
     );
   }

@@ -14,11 +14,11 @@ const links = [
 
 const SocialLinks = () => (
   <div className="navigation-social-links">
-    {links.map((item, index) => (
+    { links.map( (item, index) => (
       <a title={item.title} key={index} href={item.href} className="social-links__link ">
         <img  key={index} src={item.img} alt="link" />
       </a>
-    ))}
+    ) ) }
   </div>
 )
 

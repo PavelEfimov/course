@@ -30,8 +30,8 @@ class SideMenu extends Component {
             <div className="home-sidemenu">
                 <ul>
                     { links.map((item, index) => ( 
-                        <li className={item.special === true? "sidemenu-link link-special": "sidemenu-link"}   key={index}>
-                            <Link to={item.link}  className="link-decoration">{item.title}</Link>
+                        <li className={ item.special === true? "sidemenu-link link-special": "sidemenu-link" }   key={ index }>
+                            <Link to={ item.link }  className="link-decoration">{ item.title }</Link>
                         </li>)) }
                 </ul>
             </div>

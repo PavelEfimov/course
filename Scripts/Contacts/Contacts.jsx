@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React from 'react';
 
 const Contacts = () => <div><h1>CONTACTS</h1></div>
 

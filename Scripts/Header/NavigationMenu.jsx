@@ -13,9 +13,8 @@ const menu = [
 
 const NavigationMenu = () => (
   <div className="navigation-menu">
-    {menu.map((item, index) => (
-      <Link className="menu-link" key={index} to={item.link}>{item.title}</ Link>
-    ))}
+    { menu.map( (item, index) => <Link className="menu-link" key={index} to={item.link}>{item.title}</ Link> ) }
   </div>
 )
+
 export default NavigationMenu;
