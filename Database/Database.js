@@ -9,6 +9,6 @@ const client = new Client({
 client.connect();
 
 module.exports.getLinks = async function() {   
-    const query = await client.query('SELECT link, title FROM tables.home_links'); 
+    const query = await client.query('SELECT link, title, special FROM tables.home_links'); 
     return query.rows;
 }
