@@ -1,12 +1,13 @@
 .header {
   border-bottom: 2px solid black;
   margin: 0 auto;
-  width: 1050px;
+  width: inherit;
 }
 
 .header-image {
   background-image: url("../Images/header.jpg");
   height: 300px;
+  width: inherit;
   background-size: cover;
   background-position-y: bottom;
   border-bottom: 2px solid black;

@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Audio = () => <div><h1>AUDIO</h1></div>
+import '../../../Styles/Element.css';
+
+const Audio = () => <div className="element"><h1>AUDIO</h1></div>
 
 export default Audio;

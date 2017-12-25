@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Shrines = () => <div><h1>SHRINES</h1></div>
+import '../../../Styles/Element.css';
+
+const Shrines = () => <div className="element"><h1>SHRINES</h1></div>
 
 export default Shrines;

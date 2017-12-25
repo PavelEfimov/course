@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Location = () => <div><h1>LOCATION</h1></div>
+import '../../../Styles/Element.css';
+
+const Location = () => <div className="element"><h1>LOCATION</h1></div>
 
 export default Location;

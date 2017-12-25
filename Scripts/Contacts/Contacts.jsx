@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Contacts = () => <div><h1>CONTACTS</h1></div>
+import '../../Styles/Element.css';
+
+const Contacts = () => <div className="element" ><h1>CONTACTS</h1></div>
 
 export default Contacts;

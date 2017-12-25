@@ -23,7 +23,7 @@ class SideMenu extends Component {
     componentWillUnmount() {
         xhr.abort();
     }
-
+    //target="_blank" Для страниц, открывающихся в новом окне
     render() {
         const { links } = this.state;
         return (
@@ -31,7 +31,7 @@ class SideMenu extends Component {
                 <ul>
                     { links.map((item, index) => ( 
                         <li className={ item.special === true? "sidemenu-link link-special": "sidemenu-link" }   key={ index }>
-                            <Link to={ item.link }  className="link-decoration">{ item.title }</Link>
+                            <Link to={ item.link }  className="link-decoration" >{ item.title }</Link>
                         </li>)) }
                 </ul>
             </div>

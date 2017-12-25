@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Cloister = () => <div><h1>CLOISTER</h1></div>
+import '../../../Styles/Element.css';
+
+const Cloister = () => <div className="element"><h1>CLOISTER</h1></div>
 
 export default Cloister;

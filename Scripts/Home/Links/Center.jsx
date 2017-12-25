@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Center = () => <div><h1>CENTER</h1></div>
+import '../../../Styles/Element.css';
+
+const Center = () => <div className="element"><h1>CENTER</h1></div>
 
 export default Center;

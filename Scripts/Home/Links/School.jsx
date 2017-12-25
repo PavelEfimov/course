@@ -1,5 +1,7 @@
 import React from 'react';
 
-const School = () => <div><h1>SCHOOL</h1></div>
+import '../../../Styles/Element.css';
+
+const School = () => <div className="element"><h1>SCHOOL</h1></div>
 
 export default School;

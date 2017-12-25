@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Help = () => <div><h1>Help</h1></div>
+import '../../../Styles/Element.css';
+
+const Help = () => <div className="element"><h1>Help</h1></div>
 
 export default Help;

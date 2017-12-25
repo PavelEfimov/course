@@ -4,19 +4,18 @@ a {
 }
 
 .home {
-  width: 1050px;
+  width: inherit;
   margin: 0 auto;
   padding-top: 14px;
-  /*border: 1px solid red;*/
 }
 
 .home-sidemenu {
+  margin-top: 14px;
+  float: left;
   width: 21%;
  vertical-align: top;
   border-right: 3px dashed black;
   padding-right: 30px;
-  /*margin-right: 15px;*/
-  display: inline-block;
 }
 
 .sidemenu-link {
@@ -37,21 +36,22 @@ a {
 }
 
 .home-elements {
-  width: 74%;
+  width: 51%;
   display: inline-block;
   margin-left: 19px; 
   vertical-align: top;
-  /*border: 2px solid violet;*/
 }
 
 .home-slidebox {
-  margin-left: -1px;
-  width: 100%;
+  float: right;
+  margin-top: 14px;
+  margin-left: 19px;
+  width: 74%;
   height: 320px;
   padding-bottom: 10px;
-  margin-bottom: 15px;
   position: relative;
   border-bottom: 3px dashed black;
+
 }
 
 .slidebox-image {
@@ -59,6 +59,7 @@ a {
   height: 320px;
   -webkit-animation-name: image;
   -webkit-animation-duration: 1.5s;
+  user-select: none;
   animation-name: image;
   animation-duration: 1.5s;
 }
@@ -96,19 +97,17 @@ a {
 
 
 .elements-sidemenu {
-  margin-left: 20px; 
-  width: 240px;
+  margin-left: 14px; 
+  width: 20%;
+  margin-top: 15px;
+  padding-left: 14px;
   display: inline-block;
   text-align: center;
   border-left: 3px dashed black;
 }
 
 .home-title{
-  width: 99%;
-  vertical-align: top;
- /* display: inline-block;*/
   text-align: center;
- /* border: 1px solid black;*/
  border-bottom: 3px dashed black;
 }
 
@@ -137,20 +136,15 @@ a {
 
 .elements-some {
   padding-bottom: 20px;
-  /*border-bottom: 1px dashed black;*/
 }
 
 .home-news {
-  vertical-align: top;
   margin-top: 15px;
-  width: 99%;
-  height: 200px; 
   border: 1px solid black;
 }
 
 .title-news {
   vertical-align: top;
- /* border: 1px solid black;*/
   display: inline-block;
   width: 66%;
 }
@@ -172,11 +166,6 @@ a {
   width: 120px;
 }
 
-/*.socialLink-link {
-  text-decoration: none;
-  color: black;
-}*/
-
 .elements-LastMaterials {
   width: 200px;
   height: 100px;
@@ -188,7 +177,3 @@ a {
   margin: 0 auto;
   margin-top: 40px;
 }
-
-/*.lastMaterial-link {
-  text-decoration: none;
-}*/

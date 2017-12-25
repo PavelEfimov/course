@@ -1,5 +1,7 @@
 import React from 'react';
 
-const History = () => <div><h1>HISTORY</h1></div>
+import '../../../Styles/Element.css';
+
+const History = () => <div className="element"><h1>HISTORY</h1></div>
 
 export default History;

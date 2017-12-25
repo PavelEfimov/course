@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Schedule = () => <div><h1>SCHEDULE</h1></div>
+import '../../Styles/Element.css';
+
+const Schedule = () => <div className="element"><h1>SCHEDULE</h1></div>
 
 export default Schedule;

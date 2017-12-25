@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Library = () => <div><h1>LIBRARY</h1></div>
+import '../../../Styles/Element.css';
+
+const Library = () => <div className="element"><h1>LIBRARY</h1></div>
 
 export default Library;

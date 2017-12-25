@@ -1,5 +1,7 @@
 body {
-  margin: 0;
   padding: 0;
   background-image: url("../Images/background.jpg");
+  width: 1050px;
+  margin: 0 auto 0 auto; 
 }
+

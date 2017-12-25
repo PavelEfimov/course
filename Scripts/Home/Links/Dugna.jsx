@@ -1,5 +1,7 @@
 import React from 'react';
 
-const Dugna = () => <div><h1>Dugna</h1></div>
+import '../../../Styles/Element.css';
+
+const Dugna = () => <div className="element"><h1>Dugna</h1></div>
 
 export default Dugna;
