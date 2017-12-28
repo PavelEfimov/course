@@ -1,33 +1,24 @@
 import React, { Component } from 'react';
-
-const xhr = new XMLHttpRequest();
+import { Link } from 'react-router-dom';
 
 class News extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            data: []
+            
         }
     }
     
-    componentDidMount() {
-        xhr.open('GET', '/db/Home', false)
-        xhr.send()
-        const response = JSON.parse(xhr.responseText);   
-        this.setState({ data: response });
-    }
-
-    componentWillUnmount() {
-        xhr.abort();
-    }
-
     render() {
-        const { data } = this.state;
+        const { text, link } = this.props
+        console.log(text, link);
         return (
-            <div className="home-news">
-            { data.map( (item, index) => <h1 key={ index }>{ item.name }</h1> ) }
+            <div>
+                <p>{text}</p>
+                <Link className="menu-link" to={link}>подробнее</ Link>
             </div>
-        )
+        );
     }
 }
+
 export default News;

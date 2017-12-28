@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import Calendar from './Calendar';
 import Link from './Link';
-import News from './News';
 import SocialLink from './SocialLinks';
 import LastMaterials from './LastMaterials';
 

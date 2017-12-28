@@ -17,8 +17,11 @@ import Dugna from '../Home/Links/Dugna';
 import Cloister from '../Home/Links/Cloister';
 import Center from '../Home/Links/Center';
 
+import News from '../Home/News';
+
 const ROUTES = [
     {path: '/Home', component: Home, exact: true},
+    {path: '/Home:news', component: News},
     {path: '/Feedback', component: Feedback},
     {path: '/Remembrance', component: Remembrance},
     {path: '/Contacts', component: Contacts},
