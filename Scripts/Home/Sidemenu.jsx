@@ -3,29 +3,25 @@ import { Link } from 'react-router-dom';
 
 import '../../Styles/Home.css';
 
-const xhr = new XMLHttpRequest();
+const links = [
+    {link: "/Home/History", title: "История храма"},
+    {link: "/Home/Shrines", title: "Святыни храма"},
+    {link: "/Home/Elders", title: "Оптинские старцы"},
+    {link: "/Home/School", title: "Воскресная школа"},
+    {link: "/Home/AudioGallery", title: "Аудиогалерея"},
+    {link: "/Home/VideoGallery", title: "Видеогалерея"},
+    {link: "/Home/PhotoGallery", title: "Фотогалерея"},
+    {link: "/Home/Library", title: "Библиотека" },
+    {link: "/Home/Help", title: "Помощь храму"},
+    {link: "/Home/Location", title: "Как добраться...", special: true},
+    {link: "/Home/Dugna", title: "Дугна православная", special: true},
+    {link: "/Home/Cloister", title: "Обитель \"Отрада и Утешение\" ", special: true},
+    {link: "/Home/Center", title: "Центр \"Русский берег\" ", special: true},
+  ];
 
 class SideMenu extends Component {
-    constructor() {
-        super();
-        this.state = {
-            links: []
-        }
-    }
-
-    componentDidMount() {
-        xhr.open('GET', '/api/Home', false)
-        xhr.send()
-        const response = JSON.parse(xhr.responseText);   
-        this.setState({ links: response });
-    }
-    
-    componentWillUnmount() {
-        xhr.abort();
-    }
     //target="_blank" Для страниц, открывающихся в новом окне
     render() {
-        const { links } = this.state;
         return (
             <div className="home-sidemenu">
                 <ul>

@@ -36,6 +36,7 @@ a {
 }
 
 .home-elements {
+  margin-top: 15px;
   width: 51%;
   display: inline-block;
   margin-left: 19px; 
@@ -43,7 +44,7 @@ a {
 }
 
 .home-slidebox {
-  float: right;
+  display: inline-block;
   margin-top: 14px;
   margin-left: 19px;
   width: 74%;

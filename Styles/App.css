@@ -5,3 +5,7 @@ body {
   margin: 0 auto 0 auto; 
 }
 
+.App {
+  border: 1px solid blue;
+}
+

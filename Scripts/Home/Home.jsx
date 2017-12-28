@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import Sidemenu from './Sidemenu';
 import Slidebox from './Slidebox';
 import Title from './Title';
 import News from './News';
@@ -11,8 +10,7 @@ import '../../Styles/App.css';
 const Home = () => {
  return [
   <Slidebox key={0} />,
-  <Sidemenu key={1} />,
-      <Elements key={2} >        
+      <Elements key={1} >        
           <Title />
           <News />                
       </Elements>
