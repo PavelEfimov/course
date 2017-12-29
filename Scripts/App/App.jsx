@@ -24,5 +24,5 @@ class App extends Component {
         )
     }
 }
-// <ElementsSideMenu />  
+
 export default App;
