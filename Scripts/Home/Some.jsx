@@ -11,7 +11,7 @@ class Some extends Component {
         return (
             <div>
                 <p>{text}</p>
-                <Link className="menu-link" to={link}>подробнее</ Link>
+                <Link className="menu-link" to={link} params={{fulltext: fulltext}}>подробнее</ Link>
             </div>
         )
     }

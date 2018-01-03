@@ -21,7 +21,7 @@ import News from '../Home/News';
 
 const ROUTES = [
     {path: '/Home', component: Home, exact: true},
-    {path: '/Home/:news', component: News},
+    {path: '/Home/News/:newsID', component: News},
     {path: '/Feedback', component: Feedback},
     {path: '/Remembrance', component: Remembrance},
     {path: '/Contacts', component: Contacts},
