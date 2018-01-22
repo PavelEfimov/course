@@ -122,10 +122,49 @@ a {
 }
 
 .sidemenu-calendar {
-  width: 200px;
+  width: 206px;
   margin: 0 auto;
-  height: 200px;
+  /*height: 200px;*/
   border: 1px solid black;
+}
+
+table {
+  width: inherit;
+  text-align: left;
+  border-collapse: separate;
+  border-spacing: 2px;
+  color: #656665;
+}
+
+th {
+  background: red;
+}
+
+td {
+  text-align: center;
+  background: greenyellow;
+}
+
+.calendar-header {
+  font-size: 20px;
+}
+
+.calendar-passing {
+  user-select: none;
+  cursor: pointer;
+}
+
+.passing-left {
+  float: left;
+}
+
+.passing-right {
+  float: right;
+}
+
+.calendar-date {
+  display: inline;
+  margin: 0 20px;
 }
 
 .sidemenu-linkBlock {

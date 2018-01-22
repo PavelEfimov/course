@@ -7,11 +7,12 @@ class Some extends Component {
     }
 
     render() {
-        const { text, link , fulltext } = this.props
+        const { newsid, inf } = this.props;
+        const link =  `/Home/News/:${newsid}`;
         return (
             <div>
-                <p>{text}</p>
-                <Link className="menu-link" to={link} params={{fulltext: fulltext}}>подробнее</ Link>
+                <p>{inf}</p>
+                <Link className="menu-link" to={link} params={{newsid: newsid}}>подробнее</ Link>
             </div>
         )
     }

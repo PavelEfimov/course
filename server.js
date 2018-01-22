@@ -1,14 +1,17 @@
-//const db = require('./Database/database');
+const db = require('./Database/database');
 const express = require('express');
-var payload = require('request-payload');
- 
+const payload = require('request-payload');
+
 const app = express();
 
 app.use(express.static(__dirname + '/public'));
 
-app.get(/^(?!\/?[db,api]).+$/, (request, response) => {
+app.get(/^(?!\/?[news,main,api]).+$/, (request, response) => {
   response.sendFile('/public/index.html', {root: __dirname });  
 });
+
+
+
 
 /*app.get('/api/Home', (request, response) => (
   response.send(data)
@@ -19,7 +22,7 @@ db.getLinks()
 .then(result => data.push(...result))
 .catch( error => console.log("ERROR: ", error));
 */
-const d = [
+/*const d = [
   {
     name: "First news"
   }, 
@@ -31,18 +34,37 @@ const d = [
 app.get('/db/Home', (request, response) => (
   response.send(d)
 ));
+*/
+var data = [];
 
-let id;
+db.getNews()
+.then( result => data.push(...result) )
+.catch( error => console.log(error) );
+
+app.get('/main', (request, response) => (
+  response.send(data)
+));
+
+
+var newsid;
 app.post('/Home/News/:news', (request, response) => {
-  payload(request,  body => id = body)
+  payload(request,  body => {
+    newsid = body;
+    console.log(newsid);
+  })
 });
 
-console.log(id);
-app.get(`/Home/News/:${id}`, (request, response) => (
-  response.send("data for news ")
-))
 
-  
+var fullInf = [];
+app.get('/news', (request, response) => {
+  db.getFullInfByNewsId(newsid)
+  .then( result =>  fullInf.push(...result))
+  .catch( error => console.log(error) )
+  console.log('FULLINF: ', fullInf);
+  response.send(fullInf)
+});
+
+
 
 app.listen(3000, () => console.log('server on port 3000'));
 

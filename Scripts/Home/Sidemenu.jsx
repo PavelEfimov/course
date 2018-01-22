@@ -14,9 +14,9 @@ const links = [
     {link: "/Home/Library", title: "Библиотека" },
     {link: "/Home/Help", title: "Помощь храму"},
     {link: "/Home/Location", title: "Как добраться...", special: true},
-    {link: "/Home/Dugna", title: "Дугна православная", special: true},
-    {link: "/Home/Cloister", title: "Обитель \"Отрада и Утешение\" ", special: true},
-    {link: "/Home/Center", title: "Центр \"Русский берег\" ", special: true},
+    {link: "/Home/Dugna", title: "Дугна православная", special: true,  target: "_blank"},
+    {link: "/Home/Cloister", title: "Обитель \"Отрада и Утешение\" ", special: true,  target: "_blank"},
+    {link: "/Home/Center", title: "Центр \"Русский берег\" ", special: true, target: "_blank"},
   ];
 
 class SideMenu extends Component {
@@ -27,7 +27,7 @@ class SideMenu extends Component {
                 <ul>
                     { links.map((item, index) => ( 
                         <li className={ item.special === true? "sidemenu-link link-special": "sidemenu-link" }   key={ index }>
-                            <Link to={ item.link }  className="link-decoration" >{ item.title }</Link>
+                            <Link to={ item.link }  className="link-decoration" target={item.target}>{ item.title }</Link>
                         </li>)) }
                 </ul>
             </div>

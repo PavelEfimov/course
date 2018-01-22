@@ -11,8 +11,12 @@ client.connect();
 
 module.exports.client = client;
 
-module.exports.getLinks = async function() {   
-    const query = await client.query('SELECT link, title, special FROM tables.home_links'); 
-    console.log("ROWS: ", query.rows);
+module.exports.getNews = async function() {   
+    const query = await client.query('SELECT newsid, inf FROM tables.news'); 
+    return query.rows;
+}
+
+module.exports.getFullInfByNewsId = async function(newsid) {   
+    const query = await client.query('SELECT fullinf FROM tables.news where newsid = $1', [newsid]); 
     return query.rows;
 }
