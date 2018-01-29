@@ -2,29 +2,29 @@ import React, { Component } from 'react';
 
 import '../../Styles/Home.css';
 
-//var date = new Date();
-
 class Calendar extends Component {
     constructor(props) {
         super(props);
         this.state = {
             months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
             daysName: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-            defferentMount: 0,
+            defferentMonth: 0,
             date: new Date()
         }
 
         this.prev = () => {
-            const { date } = this.state;
-            date.setMonth( date.getMonth() - 1 );  
-            this.setState({date: date});          
+            const { date, defferentMonth } = this.state;
+            date.setMonth( date.getMonth() - 1);  
+            let defferent = defferentMonth - 1;
+            this.setState({date: date, defferentMonth: defferent});   
         }
 
         
         this.next = () => {
-            const { date } = this.state;
-            date.setMonth( date.getMonth() + 1 );  
-            this.setState({date: date}); 
+            const { date, defferentMonth } = this.state;
+            date.setMonth(date.getMonth() + 1, 1);         
+            let defferent = defferentMonth + 1;
+            this.setState({date: date, defferentMonth: defferent}); 
         }
 
         this.generateDays = () => {
@@ -49,11 +49,20 @@ class Calendar extends Component {
             return daysRows;
         }
 
+        this.click = (e) => alert(e.target.innerHTML);
+        
         this.getWeek = (dayStart, days) => {
+            let d = new Date();
+            const { date } = this.state;
+            if(d.getFullYear() === date.getFullYear() && d.getMonth() === date.getMonth()) {
+                date.setDate(d.getDate())              
+            }
             let index = 0, rows = [];
             for( let i = 0; i < 7; i++) {
                 if(i >= dayStart - 1) {
-                    rows.push(<td key={i}>{days[index]}</td>);
+                    rows.push( <td className = { days[index] === date.getDate() && 
+                            date.getMonth() === d.getMonth() && 
+                            date.getFullYear() === d.getFullYear() ? 'today': '' } key={i}>{days[index]}</td>  );
                     index++;
                 }
                 else {
@@ -64,18 +73,23 @@ class Calendar extends Component {
         }
     }
     render() {
-        const { months, daysName, date } = this.state;
+        const { months, daysName, date, defferentMonth } = this.state;
         let [dayStart, days]  = this.generateDays();
         return (
             <div className="sidemenu-calendar">
                <div className="calendar-header">
-                    <span onClick={this.prev} className="calendar-passing passing-left">←</span>
+                    <button onClick={this.prev} 
+                        className="calendar-passing passing-left" 
+                        disabled={ defferentMonth === 0 ? true: false }><span>←</span>
+                    </button> 
                     <p className="calendar-date">{`${months[date.getMonth()]} ${date.getFullYear()}`}</p> 
-                    <span onClick={this.next} className="calendar-passing passing-right">→</span> 
+                    <button onClick={this.next} 
+                        className="calendar-passing passing-right"><span>→</span>
+                    </button> 
                 </div>
                
                <table>
-                   <thead><tr>{ daysName.map((item, index) => <th key={index}>{item}</th>) }</tr></thead>
+                   <thead><tr>{ daysName.map((item, index) => <th className="calendar-daysName" key={index}>{item}</th>) }</tr></thead>
                    <tbody>
                       { this.getMonth(dayStart, days) }
                    </tbody>
@@ -86,26 +100,3 @@ class Calendar extends Component {
 }
 
 export default Calendar;
-/*
- this.getTableRow = (dayStart, days) => {
-            
-            console.log('!!!!', dayStart);
-            if ( dayStart === 0 ) {
-                dayStart = 7; 
-            }
-            let index = 0;
-            let rows = [];
-            let arr = days.splice(0, 8 - dayStart);
-            console.log(arr);
-            for( let i = 0; i < 7; i++) {
-                if(i >= dayStart - 1) {
-                    rows.push(<td key={i}>{arr[index]}</td>);
-                    index++;
-                }
-                else {
-                    rows.push(<td key={i}></td>) ;   
-                }
-            }
-            return rows;               
-        }
-*/

@@ -1,11 +1,12 @@
 body {
   padding: 0;
   background-image: url("../Images/background.jpg");
-  width: 1050px;
+  width: 1200px;
   margin: 0 auto 0 auto; 
 }
 
 .App {
   border: 1px solid blue;
+  overflow: hidden;
 }
 

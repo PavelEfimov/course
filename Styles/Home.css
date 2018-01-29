@@ -39,19 +39,20 @@ a {
   margin-top: 15px;
   width: 51%;
   display: inline-block;
-  margin-left: 19px; 
+  margin-left: 21px; 
   vertical-align: top;
 }
 
 .home-slidebox {
   display: inline-block;
   margin-top: 14px;
-  margin-left: 19px;
-  width: 74%;
+  /*margin-left: 19px;*/
+  width: 74.5%;
   height: 320px;
   padding-bottom: 10px;
   position: relative;
-  border-bottom: 3px dashed black;
+  border-bottom: 3px dashed black;/*-bottom*/
+  float: right;
 
 }
 
@@ -98,13 +99,13 @@ a {
 
 
 .elements-sidemenu {
-  margin-left: 14px; 
+  /*margin-left: 14px;*/ 
   width: 20%;
   margin-top: 15px;
-  padding-left: 14px;
-  display: inline-block;
+  padding-left: 20px;
   text-align: center;
   border-left: 3px dashed black;
+  float: right;
 }
 
 .home-title{
@@ -122,40 +123,59 @@ a {
 }
 
 .sidemenu-calendar {
-  width: 206px;
-  margin: 0 auto;
-  /*height: 200px;*/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
 }
 
 table {
-  width: inherit;
-  text-align: left;
+  width: 100%;
   border-collapse: separate;
   border-spacing: 2px;
-  color: #656665;
-}
-
-th {
-  background: red;
+  color: #656665; 
 }
 
 td {
+  width: 25px;
+  height: 25px;
   text-align: center;
-  background: greenyellow;
+  background: rgba(124,101,73,.1)
 }
 
+
 .calendar-header {
+  /*padding-top: 10px;*/
   font-size: 20px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black; 
+}
+
+.calendar-daysName {
+  color: black;
+  height: 25px;
 }
 
 .calendar-passing {
+/*  outline: none;*/
   user-select: none;
   cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 20px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.today {
+  background: red;
+}
+
+.passing-disabled {
+  cursor: default;
 }
 
 .passing-left {
   float: left;
+  
 }
 
 .passing-right {
@@ -169,7 +189,6 @@ td {
 
 .sidemenu-linkBlock {
   margin: 15px auto 0 auto;
-  width: 200px;
   height: 26px;
   border: 1px solid black;
 }

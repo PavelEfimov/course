@@ -20,10 +20,17 @@ class NewsBlock extends Component {
     }
 
     componentDidMount() {
-        xhr.open('GET','/main', false);
+        xhr.open('GET','/main');
+        xhr.onload = e => {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                const response = JSON.parse(xhr.responseText);
+                this.setState({ news: response});
+            }
+            else {
+                console.error(xhr.statusText);
+            }
+        };
         xhr.send();
-        const response = JSON.parse(xhr.responseText);
-        this.setState({ news: response});
     }
 
     componentWillUnmount() {

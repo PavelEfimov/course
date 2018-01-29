@@ -18,5 +18,6 @@ module.exports.getNews = async function() {
 
 module.exports.getFullInfByNewsId = async function(newsid) {   
     const query = await client.query('SELECT fullinf FROM tables.news where newsid = $1', [newsid]); 
+    console.log('rOWS: ', query.rows);
     return query.rows;
 }
