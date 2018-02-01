@@ -1,0 +1,72 @@
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 2px;
+    color: #656665; 
+}
+  
+td {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    background: rgba(124,101,73,.1)
+}
+  
+.rightMenu {
+    /*margin-left: 14px;*/ 
+    width: 20%;
+    margin-top: 15px;
+    padding-left: 20px;
+    text-align: center;
+    border-left: 3px dashed black;
+    float: right;
+}
+  
+.rightMenu-calendar {
+    
+}
+
+.calendar-header {
+    /*padding-top: 10px;*/
+    font-size: 20px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black; 
+}
+  
+.calendar-daysName {
+    color: black;
+    height: 25px;
+}
+  
+.calendar-passing {
+  /*  outline: none;*/
+    user-select: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+    padding-left: 0;
+    padding-right: 0;
+}
+  
+.date-today {
+    background: red;
+}
+  
+.passing-disabled {
+    cursor: default;
+}
+  
+.passing-left {
+    float: left;    
+}
+  
+.passing-right {
+    float: right;
+}
+  
+.calendar-date {
+    display: inline;
+    margin: 0 20px;
+}

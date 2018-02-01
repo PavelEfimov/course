@@ -1,0 +1,26 @@
+.leftMenu {
+    margin-top: 14px;
+    float: left;
+    width: 21%;
+   vertical-align: top;
+    border-right: 3px dashed black;
+    padding-right: 30px;
+}
+
+.leftMenu-link {
+    text-align: center;
+    list-style: none;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+.link-decoration {
+    text-decoration: none;
+    color: black;
+}
+  
+  .link-special {
+    border-bottom: 2px dotted black;
+}
+  

@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 
-import Slidebox from './Slidebox';
-import Title from './Title';
-import NewsBlock from './NewsBlock';
-import Elements from './Elements';
+import Slidebox from './Slidebox/Slidebox';
+import Title from './Content/Title';
+import NewsBlock from './Content/NewsBlock';
+import Content from './Content/Content';
 
 import '../../Styles/App.css';
 
 const Home = () => {
  return [
   <Slidebox key={0} />,
-      <Elements key={1} >        
+      <Content key={1} >        
           <Title />
           <NewsBlock />                
-      </Elements>
+      </Content>
     ]
 };
 export default Home;
