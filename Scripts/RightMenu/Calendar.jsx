@@ -49,27 +49,40 @@ class Calendar extends Component {
             return daysRows;
         }
 
-        this.click = (e) => alert(e.target.innerHTML);
+        this.click = (e) => {
+            
+        }
         
         this.getWeek = (dayStart, days) => {
-            let d = new Date();
+            let today = new Date();
             const { date } = this.state;
-            if(d.getFullYear() === date.getFullYear() && d.getMonth() === date.getMonth()) {
-                date.setDate(d.getDate())              
+            if(today.getFullYear() === date.getFullYear() && today.getMonth() === date.getMonth()) {
+                date.setDate(today.getDate())              
             }
             let index = 0, rows = [];
             for( let i = 0; i < 7; i++) {
                 if(i >= dayStart - 1) {
-                    rows.push( <td className = { days[index] === date.getDate() && 
-                            date.getMonth() === d.getMonth() && 
-                            date.getFullYear() === d.getFullYear() ? 'date-today': null } key={i}>{days[index]}</td>  );
+                   days[index] === undefined ?  rows.push( <td key={i} className="empty"></td> ) :
+                    rows.push( <td 
+                        onClick={days[index] >= today.getDate() && date.getMonth() === today.getMonth() ? 
+                            this.click: date.getMonth() > today.getMonth() ? this.click : null } 
+                        className = { this.isToday(days, index, date, today) ? 'date-today': 'date-day' } 
+                        key={i}>{days[index]}
+                        </td>  
+                    );
                     index++;
                 }
                 else {
-                    rows.push(<td key={i}></td>) ;   
+                    rows.push( <td key={i} className="empty"></td> ) ;   
                 }
             }
             return rows;               
+        }
+
+        this.isToday = (days, index, date, today) => {
+            return days[index] === date.getDate() && 
+            date.getMonth() === today.getMonth() && 
+            date.getFullYear() === today.getFullYear();
         }
     }
     render() {

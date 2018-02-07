@@ -9,9 +9,14 @@ td {
     width: 25px;
     height: 25px;
     text-align: center;
-    background: rgba(124,101,73,.1)
+    background: rgba(70, 63, 54, 0.1);
+    user-select: none;
 }
   
+.date-day:hover {
+    background: red;
+}
+
 .rightMenu {
     /*margin-left: 14px;*/ 
     width: 20%;
@@ -22,9 +27,9 @@ td {
     float: right;
 }
   
-.rightMenu-calendar {
+/*.rightMenu-calendar {
     
-}
+}*/
 
 .calendar-header {
     /*padding-top: 10px;*/
@@ -54,6 +59,10 @@ td {
     background: red;
 }
   
+.empty {
+    opacity: .5;
+  
+}
 .passing-disabled {
     cursor: default;
 }
@@ -69,4 +78,10 @@ td {
 .calendar-date {
     display: inline;
     margin: 0 20px;
+}
+
+.sidemenu-linkBlock {
+    margin: 15px auto 0 auto;
+    height: 26px;
+    border: 1px solid black;
 }
