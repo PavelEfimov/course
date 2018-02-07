@@ -1,3 +1,6 @@
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const webpack = require('webpack');
+
 module.exports = {
     entry: './Scripts/index.jsx',
     output: {
@@ -28,7 +31,21 @@ module.exports = {
                     }
                   }
                 ]
-              }
+            },
+            {
+                test: /\.(png|jpg)$/,
+                use: [
+                  {
+                    loader: 'file-loader',
+                    options: {}  
+                  }
+                ]
+            }  
         ]
-    }
-}
+    },
+    plugins: [new UglifyJsPlugin(),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': '"production"'
+        }),
+    ]
+};//ПРИМЕНИТЬ ДЛЯ SASS
